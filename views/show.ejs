@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Search Results</title>
+<style>
+body {
+	text-align: center;
+	} 
+	h1 {
+		margin-top: 50px;
+		font-size: 50px;
+		color: rgb(0, 0, 150);
+		}
+</style>
+</head>
+<body>
+<a href="/">New Search</a>
+<br>
+	<h1>Results for <%= words %> </h1>
+	<p> 
+	<div style='width:auto; height:auto; overflow:auto;'>
+		<% for (var i = 0; i < gifs.length; i++) { %>
+		<form action="GET" method="/search/saved">
+		<img src="<%= gifs[i] %>"> 
+		<input type="checkbox" name="save" value="<%= gifs[i] %>"><br>
+		<% }; %>
+		<button>Save Checked Images</button>
+		</form>
+		</div>
+	</p>
+</body>
+</html>
