@@ -20,14 +20,14 @@ body {
 	<h1>Results for <%= words %> </h1>
 	<p> 
 	<div style='width:auto; height:auto; overflow:auto;'>
+	<form action="/search/saved" method="GET">
 		<% for (var i = 0; i < gifs.length; i++) { %>
-		<form action="GET" method="/search/saved">
 		<img src="<%= gifs[i] %>"> 
 		<input type="checkbox" name="save" value="<%= gifs[i] %>"><br>
 		<% }; %>
 		<button>Save Checked Images</button>
-		</form>
-		</div>
+	</form>
+	</div>
 	</p>
 </body>
 </html>
